@@ -1,6 +1,6 @@
 <?php
 
-namespace Sokil\Mongo\Yii;
+namespace mpenicaud\Mongo\Yii;
 
 class LogRoute extends \CLogRoute 
 {

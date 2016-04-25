@@ -25,7 +25,7 @@ return array(
     'components' => array(
         // configure mongo service
         'mongo' => array(
-            'class' => '\Sokil\Mongo\Yii\ClientAdapter',
+            'class' => '\mpenicaud\Mongo\Yii\ClientAdapter',
             'dsn' => 'mongodb://127.0.0.1',
             'options' => array(
                 'connect' => true,
@@ -75,7 +75,7 @@ return array(
     'components' => array(
         // define connection service
         'mongo' => array(
-            'class' => '\Sokil\Mongo\Yii\ClientAdapter',
+            'class' => '\mpenicaud\Mongo\Yii\ClientAdapter',
             // ...
         ),
         // configure log service
@@ -83,7 +83,7 @@ return array(
             'class' => 'CLogRouter',
             'routes' => array(
                 array(
-                    'class' => '\Sokil\Mongo\Yii\LogRoute',
+                    'class' => '\mpenicaud\Mongo\Yii\LogRoute',
                     'levels' => 'error, warning',
                     // define collection name where to store log records
                     'collectionName'    => 'log',
@@ -107,7 +107,7 @@ Data Provider
 $cursor = Yii::app()->mongo->getCollection('collName')->find()->where('type', 10);
 
 // get data provider
-$dataProvider = new \Sokil\Mongo\Yii\DataProvider($cursor, array(
+$dataProvider = new \mpenicaud\Mongo\Yii\DataProvider($cursor, array(
     'attributes' => array('name', 'type'),
     'pagination' => array('pageSize' => 30)
 ));

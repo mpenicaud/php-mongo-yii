@@ -1,28 +1,25 @@
 <?php
 
-namespace Sokil\Mongo\Yii;
+namespace mpenicaud\Mongo\Yii;
 
-class DataProvider extends \CDataProvider
+class DataProvider extends \yii\data\ActiveDataProvider
 {
     public $attributes;
-    
     public $filter;
-
     /**
      *
-     * @var \Sokil\Mongo\QueryBuilder
+     * @var \mpenicaud\Mongo\QueryBuilder
      */
     private $_queryBuilder;
 
-    public function __construct($dataSource, $config = array())
-    {
+    public function __construct($dataSource, $config = array()) {
         // name of collection
         if (is_string($dataSource)) {
-            $collection = \Yii::app()->mongo->getCollection($dataSource);
+            $collection = \Yii::$app->db->getCollection($dataSource);
             $this->_queryBuilder = $collection->find();
         }
         // query builder
-        else if ($dataSource instanceof \Sokil\Mongo\QueryBuilder) {
+        else if ($dataSource instanceof \mpenicaud\Mongo\QueryBuilder) {
             $this->_queryBuilder = $dataSource;
         }
 
@@ -43,13 +40,12 @@ class DataProvider extends \CDataProvider
         }
     }
 
-    public function fetchData()
-    {
+    public function fetchData() {
         if (($pagination = $this->getPagination()) !== false) {
             $pagination->setItemCount($this->getTotalItemCount());
             $this->_queryBuilder
-                ->skip($pagination->getOffset())
-                ->limit($pagination->getLimit());
+                    ->skip($pagination->getOffset())
+                    ->limit($pagination->getLimit());
         }
 
         $sort = $this->getSort();
@@ -65,18 +61,15 @@ class DataProvider extends \CDataProvider
         return array_values($this->_queryBuilder->findAll());
     }
 
-    public function calculateTotalItemCount()
-    {
+    public function calculateTotalItemCount() {
         return $this->_queryBuilder->count();
     }
 
-    public function fetchKeys()
-    {
+    public function fetchKeys() {
         return array_keys($this->getData());
     }
 
-    public function getSort($className = 'CSort')
-    {
+    public function getSort($className = 'CSort') {
         if (($sort = parent::getSort($className)) !== false) {
             $sort->attributes = $this->attributes;
         }
