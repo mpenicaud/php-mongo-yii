@@ -1,5 +1,5 @@
 {
-    "name": "sokil/php-mongo-yii",
+    "name": "mpenicaud/php-mongo-yii",
     "description": "PHPMongo Yii Adapter",
     "license": "MIT",
     "authors": [
