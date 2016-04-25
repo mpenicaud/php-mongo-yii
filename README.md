@@ -10,7 +10,7 @@ You can install library through Composer:
 ```javascript
 {
     "require": {
-        "sokil/php-mongo-yii": "dev-master"
+        "mpenicaud/php-mongo-yii": "dev-master"
     }
 }
 ```
