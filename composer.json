@@ -9,7 +9,7 @@
         }
     ],
     "require": {
-        "mpenicaud/php-mongo": "1.*"
+        "Sokil/php-mongo": "1.*"
     },
     "autoload": {
         "psr-0": {
