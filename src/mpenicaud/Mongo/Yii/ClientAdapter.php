@@ -38,7 +38,7 @@ class ClientAdapter extends \yii\base\Component
             return $this->_mongoClient;
         }
 
-        $this->_mongoClient = new \mpenicaud\Mongo\Client($this->_dsn, $this->_options);
+        $this->_mongoClient = new \Sokil\Mongo\Client($this->_dsn, $this->_options);
 
         if ($this->_loggerSectionName) {
             $this->_mongoClient->setLogger(\Yii::app()->{$this->_loggerSectionName});

@@ -8,7 +8,7 @@ class DataProvider extends \yii\data\ActiveDataProvider
     public $filter;
     /**
      *
-     * @var \mpenicaud\Mongo\QueryBuilder
+     * @var \Sokil\Mongo\QueryBuilder
      */
     private $_queryBuilder;
 
@@ -19,7 +19,7 @@ class DataProvider extends \yii\data\ActiveDataProvider
             $this->_queryBuilder = $collection->find();
         }
         // query builder
-        else if ($dataSource instanceof \mpenicaud\Mongo\QueryBuilder) {
+        else if ($dataSource instanceof \Sokil\Mongo\QueryBuilder) {
             $this->_queryBuilder = $dataSource;
         }
 
