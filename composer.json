@@ -1,11 +1,11 @@
 {
     "name": "mpenicaud/php-mongo-yii",
-    "description": "PHPMongo Yii Adapter",
+    "description": "PHPMongo Yii Adapter - based on sokil/php-mongo extention",
     "license": "MIT",
     "authors": [
         {
-            "name": "Dmytro Sokil",
-            "email": "dmytro.sokil@gmail.com"
+            "name": "Matthieu PENICAUD",
+            "email": "matthieu.penicaud@gmail.com"
         }
     ],
     "require": {
@@ -13,7 +13,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Sokil": "src/"
+            "mpenicaud": "src/"
         }
     }
 }
